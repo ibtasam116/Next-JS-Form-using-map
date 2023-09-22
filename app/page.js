@@ -2,20 +2,10 @@
 
 import { useState } from "react";
 
-// const initialState = {
-//   name: "",
-//   email: "",
-//   phoneNumber: "",
-//   dateOfBirth: "",
-//   gender: "",
-//   address: "",
-//   programIntrested: "",
-// }
 
 const initialState = {
   name: "",
   fatherName: "",
-  religion: "",
   profession: "",
   email: "",
   phone: "",
@@ -23,8 +13,8 @@ const initialState = {
   dob: "",
   id: "",
   qualification: "",
-  address: "",
   gender: "",
+  address: "",
 }
 export default function page() {
 
@@ -72,25 +62,6 @@ export default function page() {
                   class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-[#3c6e71] focus:shadow-outline"
                   placeholder="Father Name *" required />
               </div>
-
-              <div>
-                <div class="relative">
-
-                  <select onChange={handleChange}
-                    name="religion"
-                    id="religion"
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-[#3c6e71] focus:shadow-outline">
-                    <option>Selet Religion</option>
-                    <option>Islam</option>
-                    <option>Other</option>
-                  </select>
-
-                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
-                  </div>
-                </div>
-              </div>
-
 
               <div>
                 <input onChange={handleChange}
@@ -175,15 +146,6 @@ export default function page() {
               </div>
 
               <div>
-                <input onChange={handleChange}
-                  type="text"
-                  name="address"
-                  id="address"
-                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-[#3c6e71] focus:shadow-outline"
-                  placeholder="Address" />
-              </div>
-
-              <div>
                 <div class="relative">
 
                   <select onChange={handleChange}
@@ -199,6 +161,15 @@ export default function page() {
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
                   </div>
                 </div>
+              </div>
+
+              <div className="sm:col-span-2">
+                <input onChange={handleChange}
+                  type="text"
+                  name="address"
+                  id="address"
+                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-[#3c6e71] focus:shadow-outline"
+                  placeholder="Address" />
               </div>
 
               {/* <div className="flex items-center gap-3 text-[#3c6e71] font-bold">
@@ -230,6 +201,41 @@ export default function page() {
 
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
                   <h1 className="text-center text-2xl mb-2 text-[#3c6e71e8] font-bold">User {i + 1}</h1>
+                  <div class="w-full text-sm text-left dark:text-gray-400">
+                    <div className="container px-[2%]">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1">
+                        <div className="flex md:text-lg">
+                          <h1 className="text-gray-500 uppercase font-bold">Name:</h1>
+                          <h1 className="text-gray-500 ms-2"> {item.name}</h1>
+                        </div>
+                        <div className="flex md:text-lg">
+                          <h1 className="text-gray-500 uppercase font-bold">Father Name:</h1>
+                          <h1 className="text-gray-500 ms-2"> {item.fatherName}</h1>
+                        </div>
+                        <div className="flex md:text-lg">
+                          <h1 className="text-gray-500 uppercase font-bold">Profession:</h1>
+                          <h1 className="text-gray-500 ms-2"> {item.profession}</h1>
+                        </div>
+                        <div className="flex md:text-lg">
+                          <h1 className="text-gray-500 uppercase font-bold">Email:</h1>
+                          <h1 className="text-gray-500 ms-2"> {item.email}</h1>
+                        </div>
+                        <div className="flex md:text-lg">
+                          <h1 className="text-gray-500 uppercase font-bold">Phone Number:</h1>
+                          <h1 className="text-gray-500 ms-2"> {item.phone}</h1>
+                        </div>
+                        <div className="flex md:text-lg">
+                          <h1 className="text-gray-500 uppercase font-bold">Whatsapp:</h1>
+                          <h1 className="text-gray-500 ms-2"> {item.phoneWhatsapp}</h1>
+                        </div>
+                        <div className="flex md:text-lg">
+                          <h1 className="text-gray-500 uppercase font-bold">Date Of Birth:</h1>
+                          <h1 className="text-gray-500 ms-2"> {item.dob}</h1>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
                   <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                       <tr>
@@ -242,9 +248,7 @@ export default function page() {
                           Father Name
                         </th>
 
-                        <th scope="col" class="px-6 py-3">
-                          Religion
-                        </th>
+
 
                         <th scope="col" class="px-6 py-3">
                           Profession
@@ -280,9 +284,7 @@ export default function page() {
                           {item.fatherName}
                         </td>
 
-                        <td class="px-6 py-4">
-                          {item.religion}
-                        </td>
+
 
                         <td class="px-6 py-4">
                           {item.profession}
