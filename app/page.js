@@ -203,7 +203,7 @@ export default function page() {
                   <h1 className="text-center text-2xl mb-2 text-[#3c6e71e8] font-bold">User {i + 1}</h1>
                   <div class="w-full text-sm text-left dark:text-gray-400">
                     <div className="container px-[2%]">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
                         <div className="flex md:text-lg">
                           <h1 className="text-gray-500 uppercase font-bold">Name:</h1>
                           <h1 className="text-gray-500 ms-2"> {item.name}</h1>
@@ -232,11 +232,35 @@ export default function page() {
                           <h1 className="text-gray-500 uppercase font-bold">Date Of Birth:</h1>
                           <h1 className="text-gray-500 ms-2"> {item.dob}</h1>
                         </div>
+                        <div className="flex md:text-lg">
+                          <h1 className="text-gray-500 uppercase font-bold">Cnic:</h1>
+                          <h1 className="text-gray-500 ms-2"> {item.id}</h1>
+                        </div>
+                        <div className="flex md:text-lg">
+                          <h1 className="text-gray-500 uppercase font-bold">Qualification:</h1>
+                          <h1 className="text-gray-500 ms-2"> {item.qualification}</h1>
+                        </div>
+                        <div className="flex md:text-lg">
+                          <h1 className="text-gray-500 uppercase font-bold">Gender:</h1>
+                          <h1 className="text-gray-500 ms-2"> {item.gender}</h1>
+                        </div>
+                        <div className="flex md:text-lg">
+                          <h1 className="text-gray-500 uppercase font-bold">Address:</h1>
+                          <h1 className="text-gray-500 ms-2"> {item.address}</h1>
+                        </div>
 
+                      </div>
+                      <div className="flex justify-center my-2">
+                        <button onClick={() => deleteHandler(item.html_url)} className="px-6 py-2 flex bg-red-600 hover:bg-red-700 text-white rounded-lg">
+                          Action
+                          <svg xmlns="http://www.w3.org/2000/svg" class="ms-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                          </svg>
+                        </button>
                       </div>
                     </div>
                   </div>
-                  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                  {/* <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                       <tr>
 
@@ -358,7 +382,7 @@ export default function page() {
                       </tr>
 
                     </tbody>
-                  </table>
+                  </table> */}
                 </div>
 
               </>
