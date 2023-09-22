@@ -13,6 +13,7 @@ const initialState = {
   dob: "",
   id: "",
   qualification: "",
+  religion: "",
   gender: "",
   address: "",
 }
@@ -149,6 +150,24 @@ export default function page() {
                 <div class="relative">
 
                   <select onChange={handleChange}
+                    name="religion"
+                    id="religion"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-400 leading-tight focus:outline-[#3c6e71] focus:shadow-outline">
+                    <option>Selet Religion</option>
+                    <option>Islam</option>
+                    <option>Other</option>
+                  </select>
+
+                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="relative">
+
+                  <select onChange={handleChange}
                     name="gender"
                     id="gender"
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-[#3c6e71] focus:shadow-outline">
@@ -163,7 +182,7 @@ export default function page() {
                 </div>
               </div>
 
-              <div className="sm:col-span-2">
+              <div>
                 <input onChange={handleChange}
                   type="text"
                   name="address"
@@ -239,6 +258,10 @@ export default function page() {
                         <div className="flex md:text-lg">
                           <h1 className="text-gray-500 uppercase font-bold">Qualification:</h1>
                           <h1 className="text-gray-500 ms-2"> {item.qualification}</h1>
+                        </div>
+                        <div className="flex md:text-lg">
+                          <h1 className="text-gray-500 uppercase font-bold">Religion:</h1>
+                          <h1 className="text-gray-500 ms-2"> {item.religion}</h1>
                         </div>
                         <div className="flex md:text-lg">
                           <h1 className="text-gray-500 uppercase font-bold">Gender:</h1>
